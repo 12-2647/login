@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Iniciar sesión — SecureApp{% endblock %}
+
+{% block content %}
+<div class="tarjeta">
+
+  <div class="logotipo">SecureApp</div>
+
+  <h1>Iniciar sesión</h1>
+  <p class="subtitulo">Ingresa tus credenciales para continuar</p>
+
+  {% if error %}
+  <div class="caja-error">{{ error }}</div>
+  {% endif %}
+
+  <form action="/inicio" method="post">
+
+    <div class="campo">
+      <label for="usuario">Usuario</label>
+      <input type="text" id="usuario" name="username" placeholder="tu_usuario" required/>
+    </div>
+
+    <div class="campo">
+      <label for="contrasena">Contraseña</label>
+      <input type="password" id="contrasena" name="password" placeholder="••••••••" required/>
+    </div>
+
+    <button type="submit">Entrar</button>
+
+  </form>
+
+  <p class="pista">Demo: usuario <span>admin</span> · contraseña <span>1234</span></p>
+
+</div>
+{% endblock %}

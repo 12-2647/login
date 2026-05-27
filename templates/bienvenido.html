@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Bienvenido — SecureApp{% endblock %}
+
+{% block content %}
+<div class="tarjeta">
+
+  <div class="contenido"></div>
+
+  <h1 class="titulo-bienvenida">
+    ¡Bienvenido{% if usuario %}, {{ usuario }}{% endif %}!
+  </h1>
+  <p class="subtitulo-bienvenida">Has iniciado sesión correctamente.</p>
+
+  <div class="fila-info">
+    <div class="elemento-info">
+      <div class="etiqueta-info">Estado</div>
+      <div class="valor-info verde">● Activo</div>
+    </div>
+    <div class="elemento-info">
+      <div class="etiqueta-info">Acceso</div>
+      <div class="valor-info">Autenticado</div>
+    </div>
+    <div class="elemento-info">
+      <div class="etiqueta-info">Sesión</div>
+      <div class="valor-info" id="hora">—</div>
+    </div>
+  </div>
+
+  <a href="/" class="cerrar-sesion">← Cerrar sesión</a>
+
+</div>
+
+{% endblock %}
